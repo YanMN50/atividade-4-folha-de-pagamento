@@ -27,7 +27,8 @@ class Funcionario(Base):
 
 Base.metadata.create_all(bind=db)
 
-
+def limpar_tela():
+    os.system("cls || clear")
 
 def menu():
     print("="*40)
@@ -132,6 +133,7 @@ def calcular_folha(funcionario):
           Salário Líquido: R$ {salario_liquido:.2f}
 """)
 
+limpar_tela()
 while True:
     menu()
     opcao = input("Escolha uma opção: ")
