@@ -1,6 +1,7 @@
 import os
 from sqlalchemy import create_engine, Column, String, Integer, Float
 from sqlalchemy.orm import sessionmaker, declarative_base
+from dataclasses import dataclass
 
 db = create_engine("sqlite:///meubanco.db")
 
@@ -9,6 +10,7 @@ session = Session()
 
 Base = declarative_base()
 
+# @dataclass
 class Funcionario(Base):
     __tablename__ = "funcionario"
 
@@ -40,6 +42,7 @@ def menu():
     3 - Calcular folha de pagamento
     0 - Sair
     """)
+
 
 def solicitando_dados():
     funcionario = Funcionario(
